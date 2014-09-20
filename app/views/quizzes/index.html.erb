@@ -1,0 +1,27 @@
+<h1>Elenco dei quiz</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Argomento</th>
+      <th>Domanda</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quizzes.each do |quiz| %>
+      <tr>
+        <td><%= quiz.subject %></td>
+        <td><%= quiz.question %></td>
+        <td><%= link_to 'Mostra', quiz %></td>
+        <td><%= link_to 'Modifica', edit_quiz_path(quiz) %></td>
+        <td><%= link_to 'Elimina', quiz, method: :delete, data: { confirm: 'Sei sicuro di voler eliminare?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuovo Quiz', new_quiz_path %>

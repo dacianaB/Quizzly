@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Argomento:</strong>
+  <%= @quiz.subject %>
+</p>
+
+<p>
+  <strong>Domanda:</strong>
+  <%= @quiz.question %>
+</p>
+
+
+<!-- <img src="<%= @quiz.image%>">  -->
+   <%= image_tag  @quiz.image, size: "250x250" %>
+
+
+ <p>
+  <strong>Risposte:</strong>
+  
+<ul>
+	<% @quiz.answers.each do |a| %>
+     	<li>
+        	<%= a.text %>
+        	<% if a.correct? %>
+        		(risposta corretta)
+          <% else %>
+            (risposta errata)
+        	<% end %>
+      	</li>
+  <% end %>
+</ul>
+</p>
+
+<%= link_to 'Modifica', edit_quiz_path(@quiz) %> |
+<%= link_to 'Indietro', quizzes_path %>

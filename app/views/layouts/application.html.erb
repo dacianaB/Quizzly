@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quizzly</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="header">
+		<div class="container">	
+			<%= image_tag "logo0.png" %>
+		</div>
+	</div>	
+	<div class="container">			
+		<%= yield %>
+	</div>
+
+	
+</body>
+</html>
